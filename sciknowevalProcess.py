@@ -235,6 +235,7 @@ def sciKnowEval_process_row(row):
 
 # %%
 import traceback
+import pdb
 res_list = []
 with ThreadPoolExecutor(max_workers=100) as executor:
     counter = 0
@@ -251,8 +252,11 @@ with ThreadPoolExecutor(max_workers=100) as executor:
             traceback.print_exc() 
 # 将结果写入JSON文件
 output_file = os.path.join(raw_data_path, "SciKnowEval_processed.json")
-with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(res_list, f, ensure_ascii=False, indent=4)
-
+try:
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(res_list, f, ensure_ascii=False, indent=4)
+except Exception as e:
+    print(f"Error writing to file {output_file}: {e}")
+    pdb.set_trace()
 
 
