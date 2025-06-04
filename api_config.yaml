@@ -1,0 +1,39 @@
+deepseek-r1:
+  model_name: ep-20250603200358-d4k22
+  api_key: 30a70266-37d5-4210-b8a2-34d5fb629230
+  base_url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  max_tokens: 16000
+  temperature: 0.6
+  top_p: 0.95
+  max_retries: 3
+  retry_delay: 2.0
+  timeout: 600
+
+doubao-1.5-thinking-pro:
+  model_name: ep-20250424154943-pqpjr
+  api_key: 30a70266-37d5-4210-b8a2-34d5fb629230
+  base_url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  max_tokens: 16000
+  temperature: 0.6
+  top_p: 0.95
+  max_retries: 3
+  retry_delay: 2.0
+  timeout: 600
+
+deepseek-v3:
+  model_name: ep-20250515170800-ssf5c
+  api_key: 30a70266-37d5-4210-b8a2-34d5fb629230
+  base_url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  max_tokens: 16000
+  temperature: 0.6
+  top_p: 0.95
+  max_retries: 3
+  retry_delay: 2.0
+  timeout: 600
+  
+gpt-4o-2024-11-20:
+  model_name: gpt-4o-2024-11-20
+  api_key: sk-7QEGm9ORx4pFQ6RD07zMeLTnVDphryy8vIVkGgOj60lEnHxu
+  base_url: https://api.apikey.vip/v1
+  timeout: 300
+  max_retries: 3
