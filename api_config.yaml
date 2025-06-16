@@ -37,3 +37,15 @@ gpt-4o-2024-11-20:
   base_url: https://api.apikey.vip/v1
   timeout: 300
   max_retries: 3
+
+doubao-1.6-thinking-pro:
+  model_name: ep-20250611111847-lghxl
+  api_key: 30a70266-37d5-4210-b8a2-34d5fb629230
+  base_url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  max_tokens: 16000
+  temperature: 0.3
+  top_p: 0.95
+  seed: 33
+  max_retries: 5
+  retry_delay: 2.0
+  timeout: 1000

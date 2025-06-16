@@ -101,7 +101,7 @@ def call_huoshan(messages, model_name="deepseek-r1"):
         if model_name == "r1":
             model_name="deepseek-r1"
         elif model_name == "doubao":
-            model_name = "doubao-1.5-thinking-pro"
+            model_name = "doubao-1.6-thinking-pro"
         elif model_name == "v3":
             model_name = "deepseek-v3"
         config_path=os.path.join(os.path.dirname(__file__), "api_config.yaml")
@@ -319,6 +319,6 @@ if __name__ == "__main__":
     message = """
    
     """
-    # message="你是谁？"
-    content = call_openai(message)
+    message="你是谁？"
+    content = call_huoshan(message, model_name="doubao")
     print(content)
