@@ -339,7 +339,12 @@ if __name__ == "__main__":
         # "Chembench_问题改写",
     ]
     jsonl_file_name_list=[
-       "SciKnowEval_processed_openended_filling",
+    #    "SciKnowEval_processed_repair",
+    # "SciKnowEval_processed_chemical_filling",
+    # "SciKnowEval_processed_molecule_generation",
+    # "SciKnowEval_processed_text_summary",
+    "SciKnowEval_processed_repair",
+    
     ]
     for file_name in file_name_list:
         filter(file_name)

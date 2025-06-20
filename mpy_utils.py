@@ -11,7 +11,7 @@ from  matgl.ext.ase import Relaxer # 导入专门用于结构弛豫的工具
 # ==============================================================================
 print("--- 正在加载所有必需的 MATGL 模型 ---")
 
-pes_model = matgl.load_model("CHGNet-MPtrj-2024.2.13-11M-PES")
+pes_model = matgl.load_model("CHGNet-MatPES-r2SCAN-2025.2.10-2.7M-PES")
 print("势能面 (PES) 模型加载成功！")
 
 model_wrapper = matgl.load_model("MEGNet-MP-2019.4.1-BandGap-mfi")
@@ -158,9 +158,9 @@ if __name__ == "__main__":
     formula = "BaCaCeSnO6"  # 目标化学式
     parsed_json = {
         "modification_type": "substitute",
-        "new_material_formula": "LiAlPO4F",  # 我们可以在最后打印时使用
+        "new_material_formula": "BaCaCeAlO6",  # 我们可以在最后打印时使用
         "details": {
-            "from_element": "Fe",
+            "from_element": "Sn",
             "to_element": "Al"
         }
     }
