@@ -49,3 +49,14 @@ doubao-1.6-thinking-pro:
   max_retries: 5
   retry_delay: 2.0
   timeout: 1000
+
+Qwen3-235B-A22B:
+  model_name: Qwen3-235B-A22B
+  # base_url: http://183.147.142.41:55332/v1/chat/completions
+  base_url: http://183.147.142.41:55328/v1/chat/completions
+  max_tokens: 16000
+  temperature: 0.6
+  top_p: 0.95
+  max_retries: 3
+  retry_delay: 2.0
+  timeout: 1000

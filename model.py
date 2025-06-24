@@ -104,6 +104,8 @@ def call_huoshan(messages, model_name="deepseek-r1"):
             model_name = "doubao-1.6-thinking-pro"
         elif model_name == "v3":
             model_name = "deepseek-v3"
+        elif model_name == "qwen":
+            model_name = "Qwen3-235B-A22B"
         config_path=os.path.join(os.path.dirname(__file__), "api_config.yaml")
         # 加载模型配置
         try:
@@ -162,6 +164,15 @@ def call_huoshan(messages, model_name="deepseek-r1"):
                         formatted_content = f"<think>\n{reasoning_content.strip()}\n</think>\n\n{content.strip()}"
                     else:
                         formatted_content = content.strip()
+                        if content.find("</think>") != -1:
+    
+
+                            reasoning_content= content.split("</think>")[0].strip()
+                            reasoning_content = reasoning_content.replace("<think>", "").strip()
+                            content = content.split("</think>")[1].strip()
+                            # print(f"Think: {think}")
+                            # print(f"Answer: {answer}")
+                        
                 else:
                     formatted_content = None
 
@@ -302,23 +313,23 @@ def OpenaiTranslator(
     # client: OpenAI
 ):
     messages="我将传给你一些文本，请你的回复仅包含文本翻译的内容，如果传给你的内容为空，希望你返回结果也是空字符串，请将以下内容翻译成中文：\n" + messages
-    _,content=call_openai(messages)
-    return content
+    return call_openai(messages)
+
 
 def V3Translator(
     messages
     # client: OpenAI
 ):
     messages="我将传给你一些文本，请你的回复仅包含文本翻译的内容，如果传给你的内容为空，希望你返回结果也是空字符串，请将以下内容翻译成中文：\n" + messages
-    reasoning_content,content=call_v3(messages)
-    return content
+    return call_v3(messages)
 
-    
+
 
 if __name__ == "__main__":
     message = """
    
     """
     message="你是谁？"
-    content = call_huoshan(message, model_name="doubao")
+    # content = call_huoshan(message, model_name="qwen")
+    content= call_openai(message)
     print(content)
